@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="sl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Društvo mladih Beltinci (DMB)</title>
+    <!-- Tailwind CSS prek CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- NAVIGACIJA -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-40">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-extrabold text-blue-600 tracking-wider">
+                DMB<span class="text-orange-500">.</span>
+            </a>
+            
+            <!-- Povezave -->
+            <div class="hidden md:flex space-x-8 font-medium text-gray-600">
+                <a href="#o-nas" class="hover:text-blue-600 transition">O nas</a>
+                <a href="#social-feed" class="hover:text-blue-600 transition">Socialna omrežja</a>
+                <a href="#dogodki-section" class="hover:text-blue-600 transition">Aktualni dogodki</a>
+                <a href="#vclanitev" class="hover:text-blue-600 transition">Postani član</a>
+            </div>
+
+            <!-- Gumb za prijavo/odjavo -->
+            <div id="auth-button-container">
+                <button onclick="openLoginModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-semibold transition shadow-md text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-user"></i> Prijava za člane
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SEKCIJA -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <span class="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wide uppercase">
+                Mladi za mlade v Beltincih
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black mt-6 mb-6 leading-tight">
+                Ustvarjamo prostor za druženje, kulturo in napredek!
+            </h1>
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
+                Povezujemo mladino v občini Beltinci, organiziramo delavnice, športne in kulturne dogodke ter skupaj gradimo boljšo prihodnost.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#vclanitev" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3.5 rounded-full font-bold text-lg transition shadow-lg">
+                    Pridruži se društvu
+                </a>
+                <a href="#dogodki-section" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-3.5 rounded-full font-bold text-lg transition backdrop-blur-sm">
+                    Poglej dogodke
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- O NAS -->
+    <section id="o-nas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Kdo smo in kaj delamo?</h2>
+                <p class="mt-4 text-gray-600 text-lg">
+                    Društvo mladih Beltinci je neprofitna organizacija, ki združuje mlade z željo po ustvarjanju, povezovanju in izboljšanju lokalne skupnosti.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Druženje in zabava</h3>
+                    <p class="text-gray-600">Organiziramo koncerte, predavanja, družabne večere ter športne turnirje.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Izobraževanje</h3>
+                    <p class="text-gray-600">Pripravljamo praktične delavnice, tečaje in izobraževanja za mlade.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Prostovoljstvo</h3>
+                    <p class="text-gray-600">Aktivno sodelujemo pri ekoloških akcijah in družbenih projektih v občini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA FEED -->
+    <section id="social-feed" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Sledi nam na družbenih omrežjih</h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Instagram Feed Box -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b">
+                        <i class="fa-brands fa-instagram text-3xl text-pink-600"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Instagram @dmbeltinci</h3>
+                            <p class="text-xs text-gray-500">Sveže fotke in utrinki</p>
+                        </div>
+                    </div>
+                    <div class="min-h-[300px] flex items-center justify-center bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center p-6 text-gray-400">
+                        Vdelani Instagram Feed (Juicer.io ali SociableKIT)
+                    </div>
+                </div>
+
+                <!-- Facebook Feed Box -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b">
+                        <i class="fa-brands fa-facebook text-3xl text-blue-600"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Facebook DMB</h3>
+                            <p class="text-xs text-gray-500">Uradna obvestila in dogodki</p>
+                        </div>
+                    </div>
+                    <div class="min-h-[300px] flex items-center justify-center bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center p-6 text-gray-400">
+                        Vdelani Facebook Feed
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AKTUALNI DOGODKI (JAVNI IN ADMIN URANJE) -->
+    <section id="dogodki-section" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center mb-12 flex-wrap gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Aktualni dogodki in delavnice</h2>
+                    <p class="text-gray-600 mt-2">Najnovejše aktivnosti, ki jih pripravljamo za vas.</p>
+                </div>
+                <!-- Admin gumb za dodajanje dogodka (viden le prijavljenim) -->
+                <button id="add-event-btn" onclick="openEventModal()" class="hidden bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-xl font-bold transition flex items-center gap-2">
+                    <i class="fa-solid fa-plus"></i> Dodaj nov dogodek
+                </button>
+            </div>
+
+            <!-- Seznam dogodkov -->
+            <div id="events-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dinamični dogodki se naložijo preko JavaScripta -->
+            </div>
+        </div>
+    </section>
+
+    <!-- OBRAZEC ZA VČLANITEV -->
+    <section id="vclanitev" class="py-20 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="bg-white p-8 md:p-12 rounded-3xl border border-gray-200 shadow-sm">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Postani član DMB!</h2>
+                    <p class="text-gray-600 mt-2">Izpolni spodnji obrazec in se pridruži naši ekipi.</p>
+                </div>
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Ime in priimek *</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Datum rojstva *</label>
+                            <input type="date" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">E-poštni naslov *</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Telefonska številka</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition">
+                        Oddaj pristopno izjavo
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center md:flex md:justify-between md:text-left">
+            <div>
+                <span class="text-2xl font-extrabold text-white">DMB<span class="text-orange-500">.</span></span>
+                <p class="text-sm mt-1">Društvo mladih Beltinci | Mladinska ulica 1, 9231 Beltinci</p>
+            </div>
+            <p class="text-xs text-gray-600 mt-4 md:mt-0">&copy; Društvo mladih Beltinci. Vse pravice pridržane.</p>
+        </div>
+    </footer>
+
+
+    <!-- MODALNO OKNO ZA PRIJAVO ČLANOV / ADMINA -->
+    <div id="login-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative">
+            <button onclick="closeLoginModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Prijava za člane / Admin</h3>
+            <p class="text-sm text-gray-500 mb-6">Vnesite uporabniške podatke za dostop do urejanja.</p>
+            
+            <div id="login-error" class="hidden mb-4 p-3 bg-red-100 text-red-700 text-sm rounded-xl border border-red-200">
+                Napačno uporabniško ime ali geslo!
+            </div>
+
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Uporabniško ime</label>
+                    <input type="text" id="login-username" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Geslo</label>
+                    <input type="password" id="login-password" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition mt-2">
+                    Prijavi se
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- MODALNO OKNO ZA DODAJANJE/UREJANJE DOGODKA -->
+    <div id="event-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl relative">
+            <button onclick="closeEventModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="event-modal-title" class="text-2xl font-bold text-gray-900 mb-6">Dodaj nov dogodek</h3>
+            
+            <form onsubmit="handleSaveEvent(event)" class="space-y-4">
+                <input type="hidden" id="event-id">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Naslov dogodka</label>
+                    <input type="text" id="event-title" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Datum in čas</label>
+                    <input type="text" id="event-date" placeholder="npr. 15. November 2026 ob 18:00" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Kratek opis</label>
+                    <textarea id="event-desc" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl transition mt-2">
+                    Shrani dogodek
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT LOGIKA -->
+    <script>
+        // Začetni podano dogodki (če v localStorage še ni shranjenih)
+        const defaultEvents = [
+            {
+                id: 1,
+                title: "Mladinski piknik & Turnir v odbojki",
+                date: "25. Maj 2026 ob 15:00",
+                desc: "Tradicionalno spomladansko druženje mladih v športnem parku Beltinci."
+            },
+            {
+                id: 2,
+                title: "Delavnica: Ustvarjanje digitalnih vsebin",
+                date: "10. Junij 2026 ob 17:00",
+                desc: "Brezplačna praktična delavnica o snemanju video posnetkov in obdelavi fotografij."
+            }
+        ];
+
+        // Stanje prijave in podatki o dogodkih
+        let isLoggedIn = false;
+        let events = JSON.parse(localStorage.getItem('dmb_events')) || defaultEvents;
+
+        // Nalaganje ob zagonu
+        window.onload = function() {
+            checkAuth();
+            renderEvents();
+        };
+
+        // Upravljanje modala za prijavo
+        function openLoginModal() {
+            document.getElementById('login-modal').classList.remove('hidden');
+        }
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.add('hidden');
+            document.getElementById('login-error').classList.add('hidden');
+        }
+
+        // Upravljanje modala za dogodke
+        function openEventModal(eventId = null) {
+            const modal = document.getElementById('event-modal');
+            const titleEl = document.getElementById('event-modal-title');
+            
+            if (eventId) {
+                titleEl.innerText = "Uredi dogodek";
+                const eventToEdit = events.find(e => e.id === eventId);
+                document.getElementById('event-id').value = eventToEdit.id;
+                document.getElementById('event-title').value = eventToEdit.title;
+                document.getElementById('event-date').value = eventToEdit.date;
+                document.getElementById('event-desc').value = eventToEdit.desc;
+            } else {
+                titleEl.innerText = "Dodaj nov dogodek";
+                document.getElementById('event-id').value = '';
+                document.getElementById('event-title').value = '';
+                document.getElementById('event-date').value = '';
+                document.getElementById('event-desc').value = '';
+            }
+            modal.classList.remove('hidden');
+        }
+        function closeEventModal() {
+            document.getElementById('event-modal').classList.add('hidden');
+        }
+
+        // Prijava
+        function handleLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('login-username').value;
+            const pass = document.getElementById('login-password').value;
+
+            // Preverjanje posredovanih podatkov
+            if (user === 'admindmb' && pass === 'markoviragzazupana2026') {
+                isLoggedIn = true;
+                localStorage.setItem('dmb_admin_logged', 'true');
+                closeLoginModal();
+                checkAuth();
+                renderEvents();
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+
+        // Odjava
+        function handleLogout() {
+            isLoggedIn = false;
+            localStorage.removeItem('dmb_admin_logged');
+            checkAuth();
+            renderEvents();
+        }
+
+        // Preverjanje stanja prijave
+        function checkAuth() {
+            isLoggedIn = localStorage.getItem('dmb_admin_logged') === 'true';
+            const authContainer = document.getElementById('auth-button-container');
+            const addBtn = document.getElementById('add-event-btn');
+
+            if (isLoggedIn) {
+                authContainer.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs bg-green-100 text-green-800 font-bold px-3 py-1 rounded-full border border-green-200">Admin prijavljen</span>
+                        <button onclick="handleLogout()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-full font-semibold text-sm transition">
+                            Odjava
+                        </button>
+                    </div>
+                `;
+                addBtn.classList.remove('hidden');
+            } else {
+                authContainer.innerHTML = `
+                    <button onclick="openLoginModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-semibold transition shadow-md text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-user"></i> Prijava za člane
+                    </button>
+                `;
+                addBtn.classList.add('hidden');
+            }
+        }
+
+        // Prikaz dogodkov na strani
+        function renderEvents() {
+            const grid = document.getElementById('events-grid');
+            grid.innerHTML = '';
+
+            if (events.length === 0) {
+                grid.innerHTML = `<p class="text-gray-500 col-span-full text-center py-8">Trenutno ni napovedanih novih dogodkov.</p>`;
+                return;
+            }
+
+            events.forEach(event => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-50 rounded-2xl p-6 border border-gray-200 shadow-sm flex flex-col justify-between relative";
+                
+                let adminControls = '';
+                if (isLoggedIn) {
+                    adminControls = `
+                        <div class="mt-6 pt-4 border-t border-gray-200 flex justify-end gap-2">
+                            <button onclick="openEventModal(${event.id})" class="text-xs bg-blue-100 text-blue-700 hover:bg-blue-200 font-bold px-3 py-1.5 rounded-lg transition">
+                                <i class="fa-solid fa-pen"></i> Uredi
+                            </button>
+                            <button onclick="deleteEvent(${event.id})" class="text-xs bg-red-100 text-red-700 hover:bg-red-200 font-bold px-3 py-1.5 rounded-lg transition">
+                                <i class="fa-solid fa-trash"></i> Izbriši
+                            </button>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div>
+                        <span class="text-xs font-bold text-orange-600 bg-orange-100 px-3 py-1 rounded-full uppercase tracking-wider">${event.date}</span>
+                        <h3 class="text-xl font-bold text-gray-900 mt-4 mb-2">${event.title}</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">${event.desc}</p>
+                    </div>
+                    ${adminControls}
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Shranjevanje / Urejanje dogodka
+        function handleSaveEvent(e) {
+            e.preventDefault();
+            const id = document.getElementById('event-id').value;
+            const title = document.getElementById('event-title').value;
+            const date = document.getElementById('event-date').value;
+            const desc = document.getElementById('event-desc').value;
+
+            if (id) {
+                // Posodobi obstoječi dogodek
+                events = events.map(ev => ev.id == id ? { id: Number(id), title, date, desc } : ev);
+            } else {
+                // Dodaj nov dogodek
+                const newEvent = {
+                    id: Date.now(),
+                    title,
+                    date,
+                    desc
+                };
+                events.unshift(newEvent);
+            }
+
+            localStorage.setItem('dmb_events', JSON.stringify(events));
+            renderEvents();
+            closeEventModal();
+        }
+
+        // Brisanje dogodka
+        function deleteEvent(id) {
+            if (confirm("Ali ste prepričani, da želite izbrisati ta dogodek?")) {
+                events = events.filter(e => e.id !== id);
+                localStorage.setItem('dmb_events', JSON.stringify(events));
+                renderEvents();
+            }
+        }
+    </script>
+</body>
+</html>
