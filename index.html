@@ -7,8 +7,13 @@
     <!-- Tailwind CSS prek CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- JUICER INSTAGRAM FEED SKRIPTA -->
+    <script type="text/javascript" src="https://www.juicer.io/embed/my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913/embed-code.js" async defer></script>
+    <link href="https://www.juicer.io/embed/my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913/embed-code.css" media="all" rel="stylesheet" type="text/css" />
+
     <style>
-        /* Stil za besedila, ki se urejajo */
+        /* Stil za besedila, ki se urejajo v admin načinu */
         [contenteditable="true"] {
             outline: 2px dashed #EAB308 !important;
             outline-offset: 4px;
@@ -20,7 +25,7 @@
 <body class="bg-blue-50/30 text-gray-800 font-sans antialiased">
 
     <!-- NAVIGACIJA -->
-    <nav class="fixed top-0 left-0 w-full bg-blue-900/95 backdrop-blur-md text-white shadow-lg z-40 border-b-4 border-yellow-400">
+    <nav class="fixed top-0 left-0 w-full bg-blue-950/95 backdrop-blur-md text-white shadow-lg z-40 border-b-4 border-yellow-400">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo -->
             <a href="#" class="text-2xl font-black tracking-wider text-white">
@@ -30,7 +35,7 @@
             <!-- Povezave -->
             <div class="hidden md:flex space-x-8 font-semibold text-blue-100">
                 <a href="#o-nas" class="hover:text-yellow-400 transition">O nas</a>
-                <a href="#social-feed" class="hover:text-yellow-400 transition">Socialna omrežja</a>
+                <a href="#instagram-section" class="hover:text-yellow-400 transition">Instagram</a>
                 <a href="#dogodki-section" class="hover:text-yellow-400 transition">Aktualni dogodki</a>
                 <a href="#vclanitev" class="hover:text-yellow-400 transition">Postani član</a>
             </div>
@@ -100,41 +105,40 @@
         </div>
     </section>
 
-    <!-- SOCIAL MEDIA FEED -->
-    <section id="social-feed" class="py-20 bg-blue-950 text-white">
+    <!-- INSTAGRAM FEED & SOCIAL LINKS SECTION -->
+    <section id="instagram-section" class="py-20 bg-blue-950 text-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 id="editable-social-title" data-key="social-title" class="text-3xl font-black text-white sm:text-4xl">Sledi nam na družbenih omrežjih</h2>
-                <p id="editable-social-desc" data-key="social-desc" class="text-blue-200 mt-2">Najnovejše utrinke objavljamo na Instagramu in Facebooku.</p>
+                <span class="bg-yellow-400 text-blue-950 font-black px-4 py-1.5 rounded-full text-xs uppercase tracking-wider">
+                    Spremljajte nas
+                </span>
+                <h2 id="editable-social-title" data-key="social-title" class="text-3xl font-black text-white sm:text-4xl mt-4">
+                    Najnovejše utrinke objavljamo na Instagramu
+                </h2>
+                <p id="editable-social-desc" data-key="social-desc" class="text-blue-200 mt-2">
+                    Sledi našemu profilu in bodi vedno na tekočem z vsemi dogodki ter delavnicami.
+                </p>
             </div>
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Instagram Feed Box -->
-                <div class="bg-white text-gray-800 p-6 rounded-3xl shadow-xl border-4 border-yellow-400">
-                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
-                        <i class="fa-brands fa-instagram text-3xl text-pink-600"></i>
-                        <div>
-                            <h3 class="font-bold text-lg text-blue-950">Instagram @dmbeltinci</h3>
-                            <p class="text-xs text-gray-500">Sveže fotke in utrinki</p>
-                        </div>
-                    </div>
-                    <div class="min-h-[300px] flex items-center justify-center bg-gray-50 rounded-2xl border-2 border-dashed border-gray-300 text-center p-6 text-gray-400">
-                        <script type="text/javascript" src="https://www.juicer.io/embed/my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913/embed-code.js" async defer></script>
-                    </div>
-                </div>
 
-                <!-- Facebook Feed Box -->
-                <div class="bg-white text-gray-800 p-6 rounded-3xl shadow-xl border-4 border-yellow-400">
-                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
-                        <i class="fa-brands fa-facebook text-3xl text-blue-600"></i>
-                        <div>
-                            <h3 class="font-bold text-lg text-blue-950">Facebook DMB</h3>
-                            <p class="text-xs text-gray-500">Uradna obvestila in dogodki</p>
-                        </div>
-                    </div>
-                    <div class="min-h-[300px] flex items-center justify-center bg-gray-50 rounded-2xl border-2 border-dashed border-gray-300 text-center p-6 text-gray-400">
-                        Vdelani Facebook Feed
-                    </div>
-                </div>
+            <!-- GUMBI ZA DRUŽBENA OMREŽJA (INSTAGRAM, FB, TIKTOK, YOUTUBE) -->
+            <div class="flex flex-wrap justify-center gap-4 mb-14">
+                <a href="https://instagram.com" target="_blank" class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-90 text-white px-6 py-3 rounded-2xl font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fa-brands fa-instagram text-xl"></i> Instagram
+                </a>
+                <a href="https://facebook.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fa-brands fa-facebook text-xl"></i> Facebook
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-2xl font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:-translate-y-1 border border-gray-700">
+                    <i class="fa-brands fa-tiktok text-xl"></i> TikTok
+                </a>
+                <a href="https://youtube.com" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-2xl font-bold text-sm flex items-center gap-2 shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fa-brands fa-youtube text-xl"></i> YouTube
+                </a>
+            </div>
+
+            <!-- JUICER EMBEDDED INSTAGRAM FEED -->
+            <div class="bg-white text-gray-800 p-6 md:p-8 rounded-3xl shadow-2xl border-4 border-yellow-400">
+                <ul class="juicer-feed" data-feed-id="my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913"></ul>
             </div>
         </div>
     </section>
@@ -199,12 +203,21 @@
 
     <!-- FOOTER -->
     <footer class="bg-blue-950 text-blue-200 py-12 border-t-4 border-yellow-400">
-        <div class="max-w-7xl mx-auto px-6 text-center md:flex md:justify-between md:text-left">
+        <div class="max-w-7xl mx-auto px-6 text-center md:flex md:justify-between md:text-left items-center">
             <div>
                 <span class="text-2xl font-black text-white">DMB<span class="text-yellow-400">.</span></span>
                 <p id="editable-footer-address" data-key="footer-address" class="text-sm mt-1">Društvo mladih Beltinci | Mladinska ulica 1, 9231 Beltinci</p>
             </div>
-            <p class="text-xs text-blue-300 mt-4 md:mt-0">&copy; Društvo mladih Beltinci. Vse pravice pridržane.</p>
+            
+            <!-- Povezave v nogi -->
+            <div class="flex justify-center space-x-6 text-xl my-4 md:my-0">
+                <a href="https://instagram.com" target="_blank" class="hover:text-yellow-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="hover:text-yellow-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://tiktok.com" target="_blank" class="hover:text-yellow-400 transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://youtube.com" target="_blank" class="hover:text-yellow-400 transition"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <p class="text-xs text-blue-300">&copy; Društvo mladih Beltinci. Vse pravice pridržane.</p>
         </div>
     </footer>
 
@@ -370,7 +383,6 @@
             }
         }
 
-        // Omogočanje neposrednega urejanja besedil na strani
         function enableContentEditing(enable) {
             const editables = document.querySelectorAll('[data-key]');
             editables.forEach(el => {
@@ -378,7 +390,6 @@
             });
         }
 
-        // Shranjevanje vseh sproti urejenih besedil
         function saveAllTexts() {
             const editables = document.querySelectorAll('[data-key]');
             const savedData = {};
@@ -389,7 +400,6 @@
             alert('Vsa spremenjena besedila so bila uspešno shranjena!');
         }
 
-        // Nalaganje shranjenih besedil
         function loadSavedTexts() {
             const savedData = JSON.parse(localStorage.getItem('dmb_page_texts'));
             if (savedData) {
