@@ -1,0 +1,18 @@
+{
+  "podnaslov": "Mladi za mlade v Beltincih",
+  "slogan": "Ustvarjamo prostor za druženje, kulturo in napredek! Povezujemo mladino v občini Beltinci, organiziramo delavnice, športne in kulturne dogodke ter skupaj gradimo boljšo prihodnost.",
+  "o_nas": "Društvo mladih Beltinci je neprofitna organizacija, ki združuje mlade z željo po ustvarjanju, povezovanju in izboljšanju lokalne skupnosti.",
+  "vrednote": [
+    { "naslov": "Druženje in zabava", "opis": "Organiziramo koncerte, predavanja, družabne večere ter športne turnirje." },
+    { "naslov": "Izobraževanje", "opis": "Pripravljamo praktične delavnice, tečaje in izobraževanja za mlade." },
+    { "naslov": "Prostovoljstvo", "opis": "Aktivno sodelujemo pri ekoloških akcijah in družbenih projektih v občini." }
+  ],
+  "kontakt": {
+    "email": "drustvo.mladih.beltinci@gmail.com",
+    "naslov": "Mladinska ulica 1, 9231 Beltinci",
+    "instagram": "https://www.instagram.com/drustvo_mladih_beltinci/",
+    "facebook": "https://www.facebook.com/p/Dru%C5%A1tvo-mladih-Beltinci-100092431310776/",
+    "tiktok": "",
+    "youtube": ""
+  }
+}
