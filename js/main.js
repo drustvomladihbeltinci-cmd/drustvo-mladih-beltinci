@@ -16,16 +16,16 @@
   }
   function safeUrl(u) {
     u = String(u || "").trim();
-    return /^(https?:\/\/|\/)/i.test(u) ? u : "";
+    return /^(https?:\/\/|\/|uploads\/)/i.test(u) ? u : "";
   }
   async function load(name) {
-    const r = await fetch(`/content/${name}.json?v=${Date.now()}`);
+    const r = await fetch(`content/${name}.json?v=${Date.now()}`);
     if (!r.ok) throw new Error(name);
     return r.json();
   }
   function img(src, alt) {
     const u = safeUrl(src);
-    return u ? `<img src="${esc(u)}" alt="${esc(alt)}" loading="lazy">` : `<img class="ph" src="/assets/grb.svg" alt="">`;
+    return u ? `<img src="${esc(u)}" alt="${esc(alt)}" loading="lazy">` : `<img class="ph" src="assets/grb.svg" alt="">`;
   }
 
   // Modal

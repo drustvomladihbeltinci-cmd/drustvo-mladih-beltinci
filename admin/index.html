@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>Urejevalnik – Društvo mladih Beltinci</title>
-  <link rel="icon" type="image/svg+xml" href="/assets/grb.svg">
+  <link rel="icon" type="image/svg+xml" href="../assets/grb.svg">
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/admin/admin.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body class="admin">
   <!-- Prijava -->
   <section id="login-view" class="login" hidden>
     <form id="login-form" class="form login-box">
-      <img src="/assets/grb.svg" alt="Grb DMB" width="110" height="110">
+      <img src="../assets/grb.svg" alt="Grb DMB" width="110" height="110">
       <h1>Prijava za vodje projektov</h1>
       <label>Uporabniško ime<input name="username" autocomplete="username" required></label>
       <label>Geslo<input name="password" type="password" autocomplete="current-password" required></label>
@@ -27,7 +27,7 @@
   <!-- Urejevalnik -->
   <section id="app-view" hidden>
     <header class="topbar">
-      <a class="brand" href="/" target="_blank"><img src="/assets/grb.svg" alt="" width="40" height="40"><span>DMB urejevalnik</span></a>
+      <a class="brand" href="/" target="_blank"><img src="../assets/grb.svg" alt="" width="40" height="40"><span>DMB urejevalnik</span></a>
       <div class="who"><span id="who"></span><button class="btn-link" id="logout">Odjava</button></div>
     </header>
     <div class="wrap admin-wrap">
@@ -37,6 +37,6 @@
     </div>
   </section>
 
-  <script src="/admin/admin.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>

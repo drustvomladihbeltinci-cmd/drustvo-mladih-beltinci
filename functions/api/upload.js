@@ -18,7 +18,7 @@ export async function onRequestPost({ request, env }) {
   const path = `uploads/${d.getFullYear()}/${base}-${d.getTime().toString(36)}.${ext}`;
   try {
     await ghWrite(env, path, body.data, `Slika: ${base} (${user.name})`);
-    return json({ ok: true, path: "/" + path });
+    return json({ ok: true, path });
   } catch (e) {
     return json({ error: e.message }, 502);
   }

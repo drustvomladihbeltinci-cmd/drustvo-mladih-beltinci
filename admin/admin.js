@@ -79,7 +79,7 @@
     const f = e.target, b = f.querySelector("button");
     b.disabled = true; $("#login-msg").textContent = "";
     try {
-      const j = await api("/api/login", { method: "POST", body: JSON.stringify({ username: f.username.value, password: f.password.value }) });
+      const j = await api("../api/login", { method: "POST", body: JSON.stringify({ username: f.username.value, password: f.password.value }) });
       Object.assign(STATE, { token: j.token, name: j.name, role: j.role });
       try { sessionStorage.setItem("dmb_admin", JSON.stringify({ token: j.token, name: j.name, role: j.role })); } catch {}
       f.reset(); startApp();
@@ -103,14 +103,14 @@
     document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
     $("#panel").innerHTML = `<p class="muted">Nalagam …</p>`;
     try {
-      const j = await api(`/api/content?file=${tab}`);
+      const j = await api(`../api/content?file=${tab}`);
       STATE.data = j.data; STATE.sha = j.sha;
       tab === "site" ? renderSite() : renderList();
     } catch (err) { if (err.message !== "401") $("#panel").innerHTML = `<p class="form-msg err">${esc(err.message)}</p>`; }
   }
 
   async function save(summary) {
-    const j = await api("/api/content", { method: "POST", body: JSON.stringify({ file: STATE.tab, data: STATE.data, sha: STATE.sha, summary }) });
+    const j = await api("../api/content", { method: "POST", body: JSON.stringify({ file: STATE.tab, data: STATE.data, sha: STATE.sha, summary }) });
     STATE.sha = j.sha;
     notice("✓ Shranjeno! Spremembe so zapisane na GitHub – na spletni strani bodo vidne v 1–2 minutah.", "ok");
   }
@@ -146,8 +146,8 @@
     if (f.type === "textarea") input = `<textarea name="${f.k}" rows="${f.rows || 4}"${req}>${val}</textarea>`;
     else if (f.type === "select") input = `<select name="${f.k}">${f.options.map(o => `<option${o === v ? " selected" : ""}>${esc(o)}</option>`).join("")}</select>`;
     else if (f.type === "image") input = `<div class="img-field">
-        <img src="${val || "/assets/grb.svg"}" alt="" data-prev="${f.k}">
-        <input type="text" name="${f.k}" value="${val}" placeholder="/uploads/... ali https://...">
+        <img src="${val ? (/^(https?:|\/)/.test(v) ? val : "../" + val) : "../assets/grb.svg"}" alt="" data-prev="${f.k}">
+        <input type="text" name="${f.k}" value="${val}" placeholder="uploads/... ali https://...">
         <label class="sbtn">Naloži sliko<input type="file" accept="image/*" data-up="${f.k}" hidden></label>
         <button type="button" class="sbtn danger" data-clear="${f.k}">Odstrani</button>
       </div>`;
@@ -201,7 +201,7 @@
       try {
         const blob = await shrink(file);
         const data = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(",")[1]); r.onerror = rej; r.readAsDataURL(blob); });
-        const j = await api("/api/upload", { method: "POST", body: JSON.stringify({ name: file.name, type: blob.type, data }) });
+        const j = await api("../api/upload", { method: "POST", body: JSON.stringify({ name: file.name, type: blob.type, data }) });
         root.elements[k].value = j.path;
         root.querySelector(`[data-prev="${k}"]`).src = URL.createObjectURL(blob);
         notice("Slika naložena. Ne pozabi klikniti »Shrani in objavi«.", "ok");
@@ -210,7 +210,7 @@
     }));
     root.querySelectorAll("[data-clear]").forEach(b => b.onclick = () => {
       root.elements[b.dataset.clear].value = "";
-      root.querySelector(`[data-prev="${b.dataset.clear}"]`).src = "/assets/grb.svg";
+      root.querySelector(`[data-prev="${b.dataset.clear}"]`).src = "../assets/grb.svg";
     });
   }
 

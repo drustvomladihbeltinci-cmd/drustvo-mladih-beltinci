@@ -53,7 +53,7 @@ nav a.nav-cta:hover { background: var(--navy-dark); }
 .menu-btn span { display: block; width: 26px; height: 3px; background: var(--navy); margin: 5px 0; border-radius: 3px; }
 
 /* Naslovna */
-.hero { position: relative; background: var(--blue) url("/assets/topo.svg") center / cover no-repeat; color: #fff; text-align: center; padding: 70px 20px 140px; overflow: hidden; }
+.hero { position: relative; background: var(--blue) url("../assets/topo.svg") center / cover no-repeat; color: #fff; text-align: center; padding: 70px 20px 140px; overflow: hidden; }
 .hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
 .hero-grb { width: clamp(170px, 26vw, 260px); height: auto; margin: 0 auto 1.6rem; background: #fff; border-radius: 50%; padding: 6px; box-shadow: 0 20px 50px rgba(0,0,0,.25), 0 0 0 8px rgba(238,230,42,.9); animation: pop .8s ease-out both; }
 .hero h1 { font-size: clamp(3rem, 10vw, 7.2rem); font-weight: 800; letter-spacing: .02em; line-height: .92; text-shadow: 0 4px 24px rgba(0,0,0,.25); animation: rise .8s .15s ease-out both; }
@@ -67,7 +67,7 @@ nav a.nav-cta:hover { background: var(--navy-dark); }
 /* Razdelki */
 .section { padding: 80px 0; }
 .section-tint { background: var(--yellow-tint); }
-.section-navy { background: var(--blue) url("/assets/topo.svg") center / cover no-repeat; color: #fff; }
+.section-navy { background: var(--blue) url("../assets/topo.svg") center / cover no-repeat; color: #fff; }
 .section-navy h2 { color: #fff; }
 .section-navy .eyebrow { color: var(--yellow); }
 .sub { font-size: 1.9rem; color: var(--navy); margin: 3rem 0 1.2rem; }
@@ -83,7 +83,7 @@ nav a.nav-cta:hover { background: var(--navy-dark); }
 .cards { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s; }
 .card:hover { transform: translateY(-4px); }
-.card-img { aspect-ratio: 16/9; background: var(--blue) url("/assets/topo.svg") center / cover; display: grid; place-items: center; overflow: hidden; }
+.card-img { aspect-ratio: 16/9; background: var(--blue) url("../assets/topo.svg") center / cover; display: grid; place-items: center; overflow: hidden; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
 .card-img img.ph { width: 84px; height: 84px; object-fit: contain; background: #fff; border-radius: 50%; padding: 3px; }
 .card-body { padding: 1.2rem 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
