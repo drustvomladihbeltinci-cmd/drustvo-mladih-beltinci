@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Društvo mladih Beltinci</title>
-  <meta name="description" content="Društvo mladih Beltinci – mladi za mlade. Novice, dogodki, projekti in včlanitev.">
+  <meta name="description" content="Društvo mladih Beltinci – mladi za mlade. Izobraževanje, šport in gibanje, glasba in zabava, druženje in povezovanje ter Dan mladih Beltinci.">
   <meta property="og:title" content="Društvo mladih Beltinci">
+  <meta property="og:description" content="Ne čakamo, da se nekaj zgodi, ampak to naredimo sami.">
   <meta property="og:image" content="assets/grb.png">
   <link rel="icon" type="image/svg+xml" href="assets/grb.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,99 +17,313 @@
 </head>
 <body>
   <header class="topbar" id="top">
-    <a class="brand" href="#top" aria-label="Domov">
+    <a class="brand" href="#top" aria-label="Na vrh">
       <img src="assets/grb.svg" alt="Grb Društva mladih Beltinci" width="44" height="44">
       <span>DMB</span>
     </a>
-    <button class="menu-btn" aria-label="Meni" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="menu-btn" aria-label="Meni" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     <nav id="nav">
       <a href="#o-nas">O nas</a>
-      <a href="#aktualno">Aktualno</a>
-      <a href="#dogodki">Dogodki</a>
+      <a href="#projekti">Projekti</a>
+      <a href="#partnerji">Za partnerje</a>
+      <a href="#spremljaj">Spremljaj nas</a>
       <a href="#clan" class="nav-cta">Postani član</a>
     </nav>
   </header>
 
   <main>
+    <!-- NASLOVNICA -->
     <section class="hero">
       <div class="hero-inner">
-        <img class="hero-grb" src="assets/grb.svg" alt="Grb Društva mladih Beltinci" width="280" height="280">
+        <img class="hero-grb" src="assets/grb.svg" alt="Grb Društva mladih Beltinci" width="260" height="260">
         <h1>DRUŠTVO MLADIH<br><span>BELTINCI</span></h1>
-        <p class="hero-tag" data-bind="podnaslov"></p>
-        <p class="hero-slogan" data-bind="slogan"></p>
+        <p class="hero-slogan">Ne čakamo, da se nekaj zgodi, ampak to naredimo sami.<br>Pripravljamo dogodke, ki povezujejo, učijo, razgibajo in zabavajo.</p>
         <div class="hero-actions">
           <a class="btn btn-yellow" href="#clan">Postani član</a>
-          <a class="btn btn-outline" href="#dogodki">Prihajajoči dogodki</a>
+          <a class="btn btn-outline" href="#projekti">Naši projekti</a>
         </div>
-        <div class="social-icons hero-icons" id="hero-socials"></div>
+        <div class="social-icons hero-icons" data-socials="icons"></div>
       </div>
-      <svg class="hero-arc" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 C360,10 1080,10 1440,120 L1440,120 L0,120 Z"/></svg>
+      <svg class="hero-arc" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 C360,10 1080,10 1440,120 Z"/></svg>
     </section>
 
+    <!-- O NAS -->
     <section id="o-nas" class="section">
-      <div class="wrap">
-        <p class="eyebrow">Kdo smo</p>
-        <h2>O nas</h2>
-        <div class="about">
-          <div class="about-text" data-bind="o_nas"></div>
-          <div class="values" id="vrednote"></div>
+      <div class="wrap about reveal">
+        <div class="about-text">
+          <p class="eyebrow">Kdo smo</p>
+          <h2>O nas</h2>
+          <p class="lead">Smo mladi iz Beltincev in okoliških vasi, ki ne čakamo, da se nekaj zgodi, ampak to naredimo sami.</p>
+          <p>Društvo mladih Beltinci je neprofitno društvo, ki združuje mlade iz občine Beltinci. Ustvarjamo prostor, kjer se mladi srečujejo, preizkušajo nove stvari in uresničujejo svoje ideje. Naše delo poteka v štirih sklopih: <strong>izobraževanje</strong>, <strong>šport in gibanje</strong>, <strong>glasba in zabava</strong> ter <strong>druženje in povezovanje</strong>. Vrhunec leta je <strong>Dan mladih Beltinci</strong>, največji mladinski dogodek v Beltincih.</p>
+          <p>Pri delu sodelujemo z Občino Beltinci, lokalnimi društvi, šolami in zavodi. Vsi naši projekti nastajajo prostovoljno – iz želje, da bi bili Beltinci prostor, kjer mladi radi ostanejo.</p>
         </div>
-        <div id="projekti-wrap" hidden>
-          <h3 class="sub">Naši projekti</h3>
-          <div class="grid cards" id="projekti"></div>
+        <div class="about-art" aria-hidden="true">
+          <svg viewBox="0 0 420 420">
+            <circle cx="210" cy="210" r="200" class="f-blue"/>
+            <g class="topo-lines">
+              <path d="M40 150 C120 110 180 190 260 150 S380 120 400 170"/>
+              <path d="M30 200 C110 160 190 240 270 200 S390 170 410 220"/>
+              <path d="M35 255 C115 215 195 295 275 255 S385 225 405 275"/>
+              <path d="M60 305 C140 265 210 340 290 305 S370 280 380 315"/>
+            </g>
+            <circle cx="210" cy="210" r="118" fill="#fff"/>
+            <image href="assets/grb.svg" x="102" y="102" width="216" height="216"/>
+            <g class="orbit">
+              <circle cx="69" cy="69" r="22" class="f-yellow"/><text x="69" y="76" class="orbit-t">I</text>
+              <circle cx="351" cy="69" r="22" class="f-yellow"/><text x="351" y="76" class="orbit-t">Š</text>
+              <circle cx="351" cy="351" r="22" class="f-yellow"/><text x="351" y="358" class="orbit-t">G</text>
+              <circle cx="69" cy="351" r="22" class="f-yellow"/><text x="69" y="358" class="orbit-t">D</text>
+            </g>
+          </svg>
+          <ul class="art-legend"><li><b>I</b> izobraževanje</li><li><b>Š</b> šport in gibanje</li><li><b>G</b> glasba in zabava</li><li><b>D</b> druženje in povezovanje</li></ul>
         </div>
       </div>
     </section>
 
-    <section id="aktualno" class="section section-tint">
+    <!-- PROJEKTI -->
+    <section id="projekti" class="section section-tint">
       <div class="wrap">
-        <p class="eyebrow">Novice</p>
-        <h2>Aktualno</h2>
-        <div class="grid cards" id="novice"><p class="muted">Nalagam …</p></div>
-        <div class="insta" id="omrezja">
-          <div class="insta-head">
-            <div>
-              <h3>Spremljaj nas</h3>
-              <p class="muted">Vse dogodke in utrinke sproti objavljamo na družbenih omrežjih.</p>
+        <p class="eyebrow">Kaj delamo</p>
+        <h2>Projekti</h2>
+
+        <!-- Dan mladih -->
+        <article class="feature reveal">
+          <div class="feature-art" aria-hidden="true">
+            <svg viewBox="0 0 560 420" preserveAspectRatio="xMidYMax slice">
+              <rect x="-200" y="-300" width="960" height="720" class="f-navy-deep"/>
+              <g class="stars"><circle cx="130" cy="40" r="2"/><circle cx="170" cy="100" r="1.6"/><circle cx="400" cy="30" r="2"/><circle cx="440" cy="120" r="1.4"/><circle cx="300" cy="20" r="1.8"/><circle cx="220" cy="60" r="1.4"/><circle cx="340" cy="80" r="1.5"/></g>
+              <circle cx="410" cy="70" r="30" class="f-yellow" opacity=".95"/>
+              <circle cx="423" cy="61" r="27" class="f-navy-deep"/>
+              <path d="M150 190 L60 -20 L130 -20 Z" class="beam"/>
+              <path d="M410 190 L430 -20 L510 -20 Z" class="beam"/>
+              <path d="M280 190 L245 -20 L315 -20 Z" class="beam b2"/>
+              <g class="f-tree"><circle cx="60" cy="275" r="62"/><circle cx="120" cy="300" r="40"/><circle cx="500" cy="275" r="62"/><circle cx="440" cy="300" r="40"/></g>
+              <rect x="130" y="200" width="300" height="72" rx="6" class="f-blue"/>
+              <rect x="122" y="188" width="316" height="16" rx="5" class="f-yellow"/>
+              <text x="280" y="250" class="stage-t">DAN MLADIH</text>
+              <g class="notes"><path d="M200 160 v-50 l30 -8 v48"/><circle cx="194" cy="162" r="8" class="f-yellow"/><circle cx="224" cy="152" r="8" class="f-yellow"/><path d="M360 150 v-48 l16 6"/><circle cx="354" cy="152" r="8" class="f-yellow"/></g>
+              <rect x="-200" y="318" width="960" height="140" class="f-blue"/>
+              <g class="arms"><path d="M165 316 l-14 -34"/><path d="M165 316 l14 -34"/><path d="M300 314 l-12 -36"/><path d="M300 314 l12 -36"/><path d="M435 316 l-14 -34"/><path d="M435 316 l14 -34"/></g>
+              <g class="heads"><circle cx="30" cy="330" r="15"/><circle cx="75" cy="322" r="15"/><circle cx="120" cy="332" r="15"/><circle cx="165" cy="322" r="15"/><circle cx="210" cy="334" r="15"/><circle cx="255" cy="324" r="15"/><circle cx="300" cy="320" r="15"/><circle cx="345" cy="332" r="15"/><circle cx="390" cy="323" r="15"/><circle cx="435" cy="322" r="15"/><circle cx="480" cy="332" r="15"/><circle cx="525" cy="324" r="15"/></g>
+              <g class="heads2"><circle cx="52" cy="372" r="15"/><circle cx="98" cy="366" r="15"/><circle cx="143" cy="374" r="15"/><circle cx="188" cy="366" r="15"/><circle cx="233" cy="375" r="15"/><circle cx="278" cy="366" r="15"/><circle cx="323" cy="374" r="15"/><circle cx="368" cy="366" r="15"/><circle cx="413" cy="374" r="15"/><circle cx="458" cy="366" r="15"/><circle cx="503" cy="374" r="15"/></g>
+            </svg>
+          </div>
+          <div class="feature-body">
+            <span class="badge">Glavni dogodek</span>
+            <h3>Dan mladih Beltinci</h3>
+            <p class="lead-sm">En dan v septembru, ko park Beltinci pripada mladim. Dan mladih je največji mladinski dogodek v Beltincih.</p>
+            <p>Dan mladih je zrasel iz preproste ideje – narediti „nekaj za mlade“ v Beltincih. Ideja je ostala enaka, dogodek pa vsako leto raste.</p>
+            <p>Dan mladih pripravljamo skupaj z občinskimi društvi, zavodi in šolami. Je priložnost, da se mlade in starejše generacije srečajo in družijo na enem mestu in da Beltinci pokažejo, koliko energije imajo njihovi mladi.</p>
+          </div>
+        </article>
+
+        <div class="dm-gallery reveal">
+          <div class="dm-head">
+            <h3>Kako je bilo na Dnevu mladih</h3>
+            <div class="year-tabs" role="tablist" aria-label="Izberi leto">
+              <button role="tab" data-ig-year="Dd4aJQMiJ41" aria-selected="true">2026</button>
+              <button role="tab" data-ig-year="DO3cMFBjGgS">2025</button>
+              <button role="tab" data-ig-year="DAP6qvMNuY7">2024</button>
+              <button role="tab" data-ig-year="Cxh2BweNqnZ">2023</button>
+              <button role="tab" data-ig-year="Ci2rPZnq-z_">2022</button>
             </div>
           </div>
-          <div class="social-bar" id="socials"></div>
-          <div class="feed-tabs" role="tablist" aria-label="Izberi omrežje">
-            <button class="active" data-filter="">Vse objave</button>
-            <button data-filter="Instagram">Instagram</button>
-            <button data-filter="Facebook">Facebook</button>
+          <div class="ig-stage" id="dm-post"></div>
+        </div>
+
+        <!-- Sklopi -->
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="pillar-art" aria-hidden="true">
+              <svg viewBox="0 0 400 240">
+                <rect width="400" height="240" class="f-blue"/>
+                <g class="topo-lines thin"><path d="M-10 60 C80 20 160 100 250 60 S380 30 410 70"/><path d="M-10 200 C90 160 170 240 260 200 S370 170 410 210"/></g>
+                <!-- knjiga -->
+                <path d="M200 200 C160 180 110 180 80 192 V100 C110 88 160 88 200 108 Z" fill="#fff"/>
+                <path d="M200 200 C240 180 290 180 320 192 V100 C290 88 240 88 200 108 Z" fill="#E9ECF7"/>
+                <path d="M200 108 V200" class="s-navy" stroke-width="3"/>
+                <g class="s-navy" stroke-width="3" opacity=".35"><path d="M100 118 C130 110 160 112 185 122"/><path d="M100 138 C130 130 160 132 185 142"/><path d="M100 158 C130 150 160 152 185 162"/><path d="M215 122 C240 112 270 110 300 118"/><path d="M215 142 C240 132 270 130 300 138"/></g>
+                <!-- žarnica -->
+                <circle cx="200" cy="54" r="26" class="f-yellow"/>
+                <rect x="190" y="78" width="20" height="12" rx="3" fill="#fff"/>
+                <g class="s-yellow" stroke-width="4" stroke-linecap="round"><path d="M200 14 v-8"/><path d="M160 30 l-7 -6"/><path d="M240 30 l7 -6"/><path d="M150 58 h-9"/><path d="M250 58 h9"/></g>
+                <!-- vprašaji (kviz) -->
+                <g class="qbubble"><circle cx="60" cy="64" r="24" fill="#fff"/><text x="60" y="74" class="q-t">?</text></g>
+                <g class="qbubble"><circle cx="342" cy="62" r="20" class="f-yellow"/><text x="342" y="71" class="q-t">!</text></g>
+              </svg>
+            </div>
+            <div class="pillar-body">
+              <h3>Izobraževanje</h3>
+              <p class="lead-sm">Učimo se družno – ob kvizih, pogovorih z zanimivimi gosti in delavnicah. Znanje, ki ga ne dobiš v šolskih klopeh.</p>
+              <p>Verjamemo, da se največ naučimo takrat, ko nam je zabavno. Zato pripravljamo dogodke, kjer se znanje sreča z druženjem.</p>
+              <ul class="acts">
+                <li><strong>Pub kvizi</strong> Ekipe se pomerijo v vprašanjih iz splošne razgledanosti, glasbe, filmov, športa in lokalne zgodovine. Večer je sproščen, tekmovalen in odličen način, da spoznaš nove ljudi.<div class="ig" data-ig="Dav3cUpDDvc"></div></li>
+                <li><strong>Literarni večer – Gringo Loco</strong> V Beltince smo pripeljali zgodbo, ki je navdušila Slovenijo: knjižno uspešnico <em>Gringo Loco</em> o Simonu Domu, ki je preživel zapor v Venezueli. Odkrit pogovor o odločitvah, posledicah in drugi priložnosti je pokazal, da so literarni večeri lahko tudi za mlade.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-art" aria-hidden="true">
+              <svg viewBox="0 0 400 240">
+                <rect width="400" height="240" class="f-yellow"/>
+                <g class="topo-lines thin dark"><path d="M-10 50 C80 10 160 90 250 50 S380 20 410 60"/><path d="M-10 210 C90 170 170 250 260 210 S370 180 410 220"/></g>
+                <circle cx="130" cy="120" r="78" fill="#fff" opacity=".55"/>
+                <!-- joga figura -->
+                <rect x="40" y="196" width="180" height="10" rx="5" class="f-blue"/>
+                <g class="s-navy" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                  <path d="M130 120 V160"/>
+                  <path d="M130 160 L100 194"/><path d="M130 160 L160 194"/>
+                  <path d="M130 128 L96 82"/><path d="M130 128 L164 82"/>
+                </g>
+                <circle cx="130" cy="100" r="15" fill="none" class="s-navy" stroke-width="7"/>
+                <!-- voziček -->
+                <g class="s-navy" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                  <path d="M262 110 H340 A40 40 0 0 1 300 150 H262 Z" class="f-white-fill"/>
+                  <path d="M262 110 A38 38 0 0 1 300 72 V110"/>
+                  <path d="M340 110 L356 88 H370"/>
+                </g>
+                <circle cx="275" cy="178" r="16" fill="#fff" class="s-navy" stroke-width="7"/>
+                <circle cx="330" cy="178" r="16" fill="#fff" class="s-navy" stroke-width="7"/>
+                <path d="M280 152 L275 162 M325 152 L330 162" class="s-navy" stroke-width="6" stroke-linecap="round"/>
+                <g class="f-blue"><circle cx="230" cy="54" r="6"/><circle cx="360" cy="44" r="4"/><circle cx="250" cy="216" r="4"/></g>
+              </svg>
+            </div>
+            <div class="pillar-body">
+              <h3>Šport in gibanje</h3>
+              <p class="lead-sm">Gibanje, ki je za vse – ne glede na kondicijo. Od umirjenih vadb za telo in glavo do iger, kjer se nasmejemo do solz.</p>
+              <p>Zdrav način življenja ne pomeni tekmovanja. Naše športne aktivnosti so odprte za vsakogar, ki se želi razgibati v dobri družbi.</p>
+              <ul class="acts">
+                <li><strong>Pilates in joga</strong> Vodene vadbe, ki krepijo telo, izboljšajo držo in pomagajo odklopiti od vsakdanjega stresa. Primerne so za začetnike in tiste z več izkušnjami.</li>
+                <li><strong>Vozičkanje</strong> Druženje in aktivnosti za mlade mamice, ki so na začetku svoje starševske poti. Vozičkanje je priložnost za druženje, gibanje in kvalitetno preživljanje časa.<div class="ig" data-ig="Dcq6nTKjGTW"></div></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-art" aria-hidden="true">
+              <svg viewBox="0 0 400 240">
+                <rect width="400" height="240" class="f-navy-deep"/>
+                <g class="topo-lines thin"><path d="M-10 50 C80 10 160 90 250 50 S380 20 410 60"/><path d="M-10 215 C90 175 170 255 260 215 S370 185 410 225"/></g>
+                <g class="f-tree"><circle cx="40" cy="230" r="60"/><circle cx="370" cy="232" r="56"/></g>
+                <!-- slušalke -->
+                <path d="M140 150 V120 A60 60 0 0 1 260 120 V150" fill="none" class="s-yellow" stroke-width="12" stroke-linecap="round"/>
+                <rect x="122" y="130" width="34" height="58" rx="14" class="f-yellow"/>
+                <rect x="244" y="130" width="34" height="58" rx="14" class="f-yellow"/>
+                <!-- zvočni valovi -->
+                <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".85">
+                  <path d="M178 160 v-12"/><path d="M190 168 v-28"/><path d="M202 174 v-40"/><path d="M214 166 v-24"/><path d="M226 160 v-12"/>
+                </g>
+                <!-- note -->
+                <g class="notes"><path d="M74 96 v-46 l28 -8 v44"/><path d="M322 92 v-44 l16 6"/></g>
+                <g class="f-yellow"><circle cx="68" cy="98" r="8"/><circle cx="96" cy="88" r="8"/><circle cx="316" cy="94" r="8"/></g>
+                <g class="stars"><circle cx="150" cy="30" r="2"/><circle cx="260" cy="24" r="1.8"/><circle cx="350" cy="140" r="1.6"/><circle cx="40" cy="150" r="1.6"/></g>
+              </svg>
+            </div>
+            <div class="pillar-body">
+              <h3>Glasba in zabava</h3>
+              <p class="lead-sm">Glasba nas povezuje. Odpiramo oder mladim glasbenikom in v Beltince pripeljemo večere, na katere se pride s prijatelji.</p>
+              <p>Dobra zabava je več kot glasba – je prostor, kjer se srečajo generacije, prijatelji in sosedje.</p>
+              <ul class="acts">
+                <li><strong>Park melodij</strong> Glasbeni večer na prostem, ko park Beltinci zaživi z glasbo.<div class="ig" data-ig="DblcEMeDL-K"></div></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pillar reveal">
+            <div class="pillar-art" aria-hidden="true">
+              <svg viewBox="0 0 400 240">
+                <rect width="400" height="240" class="f-navy"/>
+                <g class="topo-lines thin"><path d="M-10 40 C80 0 160 80 250 40 S380 10 410 50"/><path d="M-10 220 C90 180 170 260 260 220 S370 190 410 230"/></g>
+                <!-- povezave -->
+                <g class="s-yellow" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round" fill="none" opacity=".8">
+                  <path d="M60 70 Q200 0 340 70"/><path d="M50 190 Q200 250 350 190"/>
+                </g>
+                <g class="f-yellow"><circle cx="60" cy="70" r="9"/><circle cx="340" cy="70" r="9"/><circle cx="50" cy="190" r="7"/><circle cx="350" cy="190" r="7"/></g>
+                <!-- trije liki kot na grbu -->
+                <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="140" cy="92" r="13"/><circle cx="200" cy="92" r="13"/><circle cx="260" cy="92" r="13"/>
+                  <path d="M100 128 C116 118 126 120 140 136 C154 120 166 116 170 120 C182 116 190 120 200 136 C210 120 218 116 230 120 C234 116 246 120 260 136 C274 120 284 118 300 128"/>
+                  <path d="M140 136 C126 156 122 190 140 190 C158 190 154 156 140 136"/>
+                  <path d="M200 136 C186 160 184 196 200 196 C216 196 214 160 200 136"/>
+                  <path d="M260 136 C246 156 242 190 260 190 C278 190 274 156 260 136"/>
+                </g>
+                <!-- oblački -->
+                <g><rect x="34" y="104" width="56" height="34" rx="12" class="f-yellow"/><path d="M50 136 l-6 12 l16 -10 z" class="f-yellow"/><g class="f-navy"><circle cx="50" cy="121" r="3.5"/><circle cx="62" cy="121" r="3.5"/><circle cx="74" cy="121" r="3.5"/></g></g>
+                <g><rect x="312" y="98" width="52" height="32" rx="12" fill="#fff"/><path d="M350 128 l8 12 l-16 -10 z" fill="#fff"/><path d="M328 114 c0-6 8-6 10 0 c2-6 10-6 10 0 c0 6-10 10-10 12 c0-2-10-6-10-12z" class="f-blue"/></g>
+              </svg>
+            </div>
+            <div class="pillar-body">
+              <h3>Druženje in povezovanje</h3>
+              <p class="lead-sm">Najprej smo prijatelji, šele nato društvo. Gradimo skupnost mladih, ki se poznajo, si pomagajo in skupaj ustvarjajo.</p>
+              <p>Vse, kar naredimo, se začne pri ljudeh. Zato se člani redno dobivamo na druženjih, kjer se spoznavamo, kujemo ideje za nove projekte in preživimo čas brez obveznosti.</p>
+              <p>Povezujemo mlade iz vseh vasi občine Beltinci – tiste, ki tu študirajo ali delajo, in tiste, ki se ob vikendih vračajo domov. Želimo si aktivne skupnosti, v kateri ima vsak prostor, da predlaga svojo idejo in jo z našo pomočjo tudi izpelje.</p>
+              <p>Sodelujemo tudi navzven: z drugimi društvi v občini, študentskimi klubi, šolami in mladinskimi organizacijami po Pomurju.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZA PODJETJA IN PARTNERJE -->
+    <section id="partnerji" class="section">
+      <div class="wrap partners reveal">
+        <div class="partners-art" aria-hidden="true">
+          <svg viewBox="0 0 360 300">
+            <circle cx="180" cy="150" r="140" class="f-yellow-tint"/>
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+              <path d="M60 150 L120 110 L170 130" class="s-blue"/>
+              <path d="M300 150 L240 110 L190 128 L150 160 C140 170 156 186 170 176 L200 156" class="s-navy"/>
+              <path d="M120 110 L60 150 L130 210 C140 220 152 214 150 202 M150 202 C160 212 174 206 170 194 M170 194 C180 204 194 198 190 186 L200 176 L240 206 L300 150" class="s-blue"/>
+            </g>
+            <g class="f-yellow"><circle cx="180" cy="44" r="10"/><circle cx="76" cy="66" r="7"/><circle cx="290" cy="70" r="8"/></g>
+          </svg>
+        </div>
+        <div>
+          <p class="eyebrow">Sodelujmo</p>
+          <h2>Za podjetja in partnerje</h2>
+          <p class="lead">Podprite mlade, ki ustvarjajo v Beltincih.</p>
+          <p>Naši projekti nastajajo prostovoljno, za izvedbo pa potrebujemo podpornike. Podjetjem, ustanovam in posameznikom ponujamo partnerstvo, ki koristi obema stranema: vi podprete mlade in lokalno skupnost, mi pa poskrbimo, da vašo podporo opazijo.</p>
+          <p><strong>Za več informacij nas kontaktirajte na:</strong></p>
+          <a class="btn btn-navy" href="mailto:drustvo.mladih.beltinci@gmail.com?subject=Partnerstvo%20z%20Dru%C5%A1tvom%20mladih%20Beltinci"><i class="fa-solid fa-envelope" aria-hidden="true"></i> drustvo.mladih.beltinci@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPREMLJAJ NAS -->
+    <section id="spremljaj" class="section section-tint">
+      <div class="wrap">
+        <p class="eyebrow">Družbena omrežja</p>
+        <h2>Spremljaj nas</h2>
+        <p class="lead">Vse naše dogodke sproti objavljamo na družbenih omrežjih.</p>
+        <div class="social-bar" data-socials="buttons"></div>
+        <div class="feeds">
+          <div class="feed">
+            <h3><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</h3>
+            <ul class="juicer-feed" data-feed-id="my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913" data-filter="Instagram" data-per="6" data-columns="2" data-truncate="140" data-gutter="12"></ul>
+            <a class="feed-more" href="https://www.instagram.com/drustvo_mladih_beltinci/" target="_blank" rel="noopener">Odpri profil na Instagramu →</a>
           </div>
-          <div id="feed-wrap">
-            <ul class="juicer-feed" data-feed-id="my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913" data-per="9" data-columns="3" data-truncate="180" data-gutter="16"></ul>
+          <div class="feed">
+            <h3><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</h3>
+            <div class="fb-box" id="fb-box"></div>
+            <a class="feed-more" href="https://www.facebook.com/p/Dru%C5%A1tvo-mladih-Beltinci-100092431310776/" target="_blank" rel="noopener">Odpri stran na Facebooku →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="dogodki" class="section">
-      <div class="wrap">
-        <p class="eyebrow">Koledar</p>
-        <h2>Dogodki</h2>
-        <div class="events" id="dogodki-list"><p class="muted">Nalagam …</p></div>
-        <details class="past" id="pretekli-wrap" hidden>
-          <summary>Pretekli dogodki</summary>
-          <div class="events" id="pretekli"></div>
-        </details>
-      </div>
-    </section>
-
+    <!-- POSTANI ČLAN -->
     <section id="clan" class="section section-navy">
       <div class="wrap join">
         <div class="join-intro">
           <p class="eyebrow">Pridruži se</p>
           <h2>Postani član</h2>
-          <p>Izpolni kratko prijavnico in se pridruži naši ekipi! Tajnik društva te bo kontaktiral v nekaj dneh.</p>
-          <img src="assets/grb.svg" alt="" class="join-grb" aria-hidden="true">
+          <p class="lead">Imaš idejo, energijo ali samo želiš spoznati nove ljudi? Pridruži se nam – v društvu je prostor zate.</p>
+          <p>Članstvo je odprto za mlade iz občine Beltinci in okolice. Kot član lahko sodeluješ pri pripravi dogodkov, predlagaš svoje projekte, se udeležiš druženj in vadb ter postaneš del ekipe, ki vsako leto pripravi Dan mladih.</p>
+          <p>Izpolni kratko prijavnico in tajnik društva te bo kontaktiral.</p>
         </div>
-        <div class="form gform" id="join-box">
-          <iframe id="gform" title="Prijavnica za članstvo" loading="lazy" hidden>Nalagam …</iframe>
+        <div class="form gform">
+          <iframe id="gform" title="Pristopna izjava – Društvo mladih Beltinci" loading="lazy" hidden>Nalagam …</iframe>
           <div id="gform-missing" class="gform-missing">
             <p><strong>Prijavnica bo kmalu na voljo.</strong></p>
             <p>Do takrat nam piši na <a href="mailto:drustvo.mladih.beltinci@gmail.com">drustvo.mladih.beltinci@gmail.com</a>.</p>
@@ -124,22 +339,14 @@
         <img src="assets/grb.svg" alt="" width="64" height="64">
         <div>
           <strong>Društvo mladih Beltinci</strong>
-          <span data-bind="kontakt.naslov"></span>
+          <span>Mladinska ulica 2, 9231 Beltinci</span>
+          <a href="mailto:drustvo.mladih.beltinci@gmail.com">drustvo.mladih.beltinci@gmail.com</a>
         </div>
       </div>
-      <div class="foot-links" id="foot-links"></div>
-      <div class="social-icons" id="foot-socials"></div>
-      <a class="foot-admin" href="admin/">Prijava za vodje projektov</a>
+      <div class="social-icons" data-socials="icons"></div>
     </div>
     <p class="copy">© <span id="leto"></span> Društvo mladih Beltinci</p>
   </footer>
-
-  <div class="modal" id="modal" hidden>
-    <div class="modal-box" role="dialog" aria-modal="true">
-      <button class="modal-close" aria-label="Zapri">×</button>
-      <div id="modal-body"></div>
-    </div>
-  </div>
 
   <link href="https://www.juicer.io/embed/my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913/embed-code.css" media="all" rel="stylesheet">
   <script src="https://www.juicer.io/embed/my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913/embed-code.js" async defer></script>
