@@ -1,4 +1,5 @@
 /* Društvo mladih Beltinci – barve iz logotipa */
+[hidden] { display: none !important; }
 :root {
   --navy: #2A3B89;      /* modra iz grba */
   --navy-dark: #1E2B66;
@@ -170,3 +171,31 @@ nav a.nav-cta:hover { background: var(--navy-dark); }
 .socials a:hover { background: var(--navy); }
 .hero-tag { font-family: var(--head); font-weight: 700; font-size: clamp(1.2rem, 2.6vw, 1.7rem); color: var(--yellow); margin: 1rem 0 0; letter-spacing: .03em; animation: rise .8s .25s ease-out both; }
 .hero-tag:empty { display: none; }
+
+/* Google Forms prijavnica */
+.gform { padding: 0; overflow: hidden; }
+.gform iframe { display: block; width: 100%; height: 1150px; border: 0; }
+.gform-missing { padding: 1.8rem; }
+.gform-missing p { margin: 0 0 .6rem; }
+@media (max-width: 560px) { .gform iframe { height: 1350px; } }
+
+/* Družbena omrežja */
+.social-bar { display: flex; flex-wrap: wrap; gap: .6rem; margin: .4rem 0 1.4rem; }
+.net { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; color: #fff; font-family: var(--head); font-weight: 700; font-size: 1.05rem; letter-spacing: .04em; text-transform: uppercase; padding: .55rem 1.1rem; border-radius: 999px; background: var(--blue); transition: transform .15s, filter .15s; }
+.net:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.net i { font-size: 1.15rem; }
+.net-instagram { background: linear-gradient(45deg, #F58529, #DD2A7B 50%, #8134AF); }
+.net-facebook { background: #1877F2; }
+.net-tiktok { background: #111; }
+.net-youtube { background: #FF0000; }
+.net-linkedin { background: #0A66C2; }
+.social-icons { display: flex; gap: .55rem; flex-wrap: wrap; }
+.social-icons:empty { display: none; }
+.social-icons a { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.12); color: var(--yellow); text-decoration: none; font-size: 1.15rem; transition: background .15s, color .15s; }
+.social-icons a:hover { background: var(--yellow); color: var(--navy-deep); }
+.hero-icons { justify-content: center; margin-top: 1.6rem; animation: rise .8s .55s ease-out both; }
+.hero-icons a { background: rgba(255,255,255,.16); color: #fff; }
+.feed-tabs { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.feed-tabs button { font: 700 1rem var(--head); text-transform: uppercase; letter-spacing: .05em; border: 2px solid var(--navy); background: #fff; color: var(--navy); padding: .4rem 1rem; border-radius: 999px; cursor: pointer; }
+.feed-tabs button.active { background: var(--navy); color: #fff; }
+#feed-wrap .juicer-feed { margin: 0; padding: 0; }

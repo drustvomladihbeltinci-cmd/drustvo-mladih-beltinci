@@ -1,7 +1,7 @@
 // Nastavitve spletne strani Društva mladih Beltinci
 window.DMB_CONFIG = {
-  // Na ta naslov prihajajo prijave iz obrazca "Postani član".
-  // Ob prvi oddaji obrazca FormSubmit na ta naslov pošlje potrditveni e-mail –
-  // kliknite "Activate Form" in od takrat naprej prijave prihajajo samodejno.
-  joinEmail: "tajnik.dmb@gmail.com"
+  // Povezava do Google Forms prijavnice za članstvo.
+  // V Google Forms: Pošlji → ikona <> (Vdelaj HTML) ali ikona povezave → kopiraj povezavo
+  // in jo prilepi med narekovaje, npr. "https://docs.google.com/forms/d/e/1FAIpQL.../viewform"
+  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfNUpc7Vmkw-kbTWGhqGKA5KCaxj-P1epefxRh9kdeb8dYSpA/viewform"
 };

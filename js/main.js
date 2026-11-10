@@ -53,10 +53,18 @@
     const k = site.kontakt || {};
     const links = [];
     if (k.email) links.push(`<a href="mailto:${esc(k.email)}">${esc(k.email)}</a>`);
-    const soc = [["Instagram", k.instagram], ["Facebook", k.facebook], ["TikTok", k.tiktok], ["YouTube", k.youtube]]
-      .filter(([, u]) => safeUrl(u)).map(([n, u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`);
-    $("#foot-links").innerHTML = links.concat(soc).join("");
-    $("#socials").innerHTML = soc.join("");
+    const NETS = [
+      ["instagram", "Instagram", "fa-instagram"], ["facebook", "Facebook", "fa-facebook-f"],
+      ["tiktok", "TikTok", "fa-tiktok"], ["youtube", "YouTube", "fa-youtube"], ["linkedin", "LinkedIn", "fa-linkedin-in"]
+    ].filter(([key]) => safeUrl(k[key]));
+    const icon = (cls, label) => `<i class="fa-brands ${cls}" aria-hidden="true"></i><span>${label}</span>`;
+    $("#socials").innerHTML = NETS.map(([key, label, cls]) =>
+      `<a class="net net-${key}" href="${esc(k[key])}" target="_blank" rel="noopener">${icon(cls, label)}</a>`).join("");
+    $("#foot-links").innerHTML = links.join("");
+    $("#foot-socials").innerHTML = NETS.map(([key, label, cls]) =>
+      `<a href="${esc(k[key])}" target="_blank" rel="noopener" aria-label="${label}" title="${label}"><i class="fa-brands ${cls}" aria-hidden="true"></i></a>`).join("");
+    const heroSoc = $("#hero-socials");
+    if (heroSoc) heroSoc.innerHTML = $("#foot-socials").innerHTML;
   }).catch(() => {});
 
   load("novice").then(list => {
@@ -118,36 +126,31 @@
       </article>`).join("");
   }).catch(() => {});
 
-  // Obrazec Postani član
-  const form = $("#join-form"), msg = $(".form-msg", form);
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    msg.className = "form-msg"; msg.textContent = "";
-    let bad = false;
-    form.querySelectorAll("[required]").forEach(i => {
-      const v = i.type === "checkbox" ? i.checked : i.value.trim() && i.checkValidity();
-      i.classList.toggle("invalid", !v); if (!v) bad = true;
-    });
-    if (bad) { msg.className = "form-msg err"; msg.textContent = "Prosimo, izpolni vsa obvezna polja (*)."; return; }
-    if (form._honey.value) return;
-    const data = Object.fromEntries(new FormData(form));
-    delete data._honey;
-    data.soglasje = "DA";
-    data._subject = `Nova prijava za članstvo: ${data.ime}`;
-    data._template = "table";
-    data._replyto = data.email;
-    const b = form.querySelector("button"); b.disabled = true; b.textContent = "Pošiljam …";
-    try {
-      const r = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(window.DMB_CONFIG.joinEmail)}`, {
-        method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data)
-      });
-      const j = await r.json().catch(() => ({}));
-      if (!r.ok || String(j.success) === "false") throw new Error(j.message || "Napaka");
-      form.reset();
-      msg.className = "form-msg ok"; msg.textContent = "Hvala! Tvoja prijava je bila poslana. Kmalu se ti oglasimo.";
-    } catch (err) {
-      msg.className = "form-msg err";
-      msg.textContent = `Pošiljanje ni uspelo. Poskusi znova ali piši na ${window.DMB_CONFIG.joinEmail}.`;
-    } finally { b.disabled = false; b.textContent = "Oddaj pristopno izjavo"; }
+  // Filter objav (Juicer): Vse / Instagram / Facebook
+  const tabs = document.querySelector(".feed-tabs");
+  if (tabs) tabs.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    tabs.querySelectorAll("button").forEach(x => x.classList.toggle("active", x === b));
+    const ul = document.createElement("ul");
+    ul.className = "juicer-feed";
+    const old = $("#feed-wrap .juicer-feed");
+    ["data-feed-id", "data-per", "data-columns", "data-truncate", "data-gutter"].forEach(a => ul.setAttribute(a, old.getAttribute(a)));
+    if (b.dataset.filter) ul.setAttribute("data-filter", b.dataset.filter);
+    $("#feed-wrap").replaceChildren(ul);
+    // ponovno naloži Juicer skripto, da prebere nov filter
+    const sc = document.createElement("script");
+    sc.src = "https://www.juicer.io/embed/my-feed-38dbe5b2-9395-4b73-8e58-f80fcfd11913/embed-code.js?t=" + Date.now();
+    sc.async = true;
+    document.body.appendChild(sc);
   });
+
+  // Prijavnica Postani član (vdelan Google Forms obrazec)
+  const formUrl = String((window.DMB_CONFIG || {}).googleFormUrl || "").trim();
+  const m = formUrl.match(/^https:\/\/docs\.google\.com\/forms\/d\/e\/[\w-]+/);
+  if (m) {
+    const frame = $("#gform");
+    frame.src = m[0] + "/viewform?embedded=true";
+    frame.hidden = false;
+    $("#gform-missing").hidden = true;
+  }
 })();

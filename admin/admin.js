@@ -254,6 +254,7 @@
           <label>TikTok (povezava)<input name="k_tiktok" type="url" value="${esc(d.kontakt.tiktok)}"></label>
           <label>YouTube (povezava)<input name="k_youtube" type="url" value="${esc(d.kontakt.youtube)}"></label>
         </div>
+        <div class="row"><label>LinkedIn (povezava)<input name="k_linkedin" type="url" value="${esc(d.kontakt.linkedin)}"></label></div>
         <div class="form-actions"><button class="btn btn-yellow" type="submit">Shrani in objavi</button></div>
       </form>`;
     $("#site").addEventListener("submit", async e => {
@@ -262,7 +263,7 @@
       const backup = JSON.parse(JSON.stringify(d));
       d.podnaslov = el("podnaslov"); d.slogan = el("slogan"); d.o_nas = f.elements.o_nas.value.trim();
       d.vrednote = d.vrednote.map((_, i) => ({ naslov: el("vn" + i), opis: el("vo" + i) }));
-      d.kontakt = { email: el("k_email"), naslov: el("k_naslov"), instagram: el("k_instagram"), facebook: el("k_facebook"), tiktok: el("k_tiktok"), youtube: el("k_youtube") };
+      d.kontakt = { email: el("k_email"), naslov: el("k_naslov"), instagram: el("k_instagram"), facebook: el("k_facebook"), tiktok: el("k_tiktok"), youtube: el("k_youtube"), linkedin: el("k_linkedin") };
       try { await save("posodobljeno besedilo"); }
       catch (err) { STATE.data = backup; if (err.message !== "401") notice(err.message, "err"); }
     });
